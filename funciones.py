@@ -336,3 +336,196 @@ def menu_actualizacion(col):
         return
     else:
         print("Opción no válida.")
+
+# ──────────────────────────────────────────────
+#  4. CONSULTAS
+# ──────────────────────────────────────────────
+ 
+def menu_consultas(col):
+    separador("CONSULTAS")
+    print("1.  Juegos por año")
+    print("2.  Juegos disponibles")
+    print("3.  Top 5 juegos por valoración")
+    print("4.  Juegos con nota superior a un valor")
+    print("5.  Juegos ordenados por precio (ascendente)")
+    print("6.  Buscar por género")
+    print("7.  Juegos en PS4 y PC")
+    print("8.  Juegos con alguna puntuación de usuario = 10")
+    print("9.  Juegos por desarrollador")
+    print("10. Juegos con Metacritic ≥ 90")
+    print("11. Juegos con ventas en América > 10M")
+    print("12. Estadísticas por género")
+    print("13. Ranking de desarrolladores por ventas")
+    print("0.  Volver")
+ 
+    opcion = input("\nElige una consulta: ").strip()
+ 
+    # ── Simples ──
+    if opcion == "1":
+        try:
+            año = int(input("Año a buscar: "))
+        except ValueError:
+            print(" Año no válido.")
+            return
+        separador(f"Juegos del año {año}")
+        juegos = col.find({"año": año}, {"titulo": 1, "año": 1, "desarrollador.nombre": 1, "_id": 0})
+        for j in juegos:
+            print(f"  • {j['titulo']} — {j.get('desarrollador', {}).get('nombre', 'N/A')}")
+ 
+    elif opcion == "2":
+        separador("Juegos disponibles")
+        juegos = col.find({"disponible": True}, {"titulo": 1, "precio": 1, "_id": 0}).sort("titulo", 1)
+        for j in juegos:
+            print(f"  • {j['titulo']} — {j.get('precio', 'N/A')} €")
+ 
+    elif opcion == "3":
+        separador("Top 5 juegos por valoración")
+        juegos = col.find({}, {"titulo": 1, "valoraciones.nota": 1, "_id": 0}).sort("valoraciones.nota", -1).limit(5)
+        for i, j in enumerate(juegos, 1):
+            nota = j.get("valoraciones", {}).get("nota", "N/A")
+            print(f"  {i}. {j['titulo']} — Nota: {nota}")
+ 
+    elif opcion == "4":
+        try:
+            umbral = int(input("Nota mínima (0-100): "))
+        except ValueError:
+            print(" Valor no válido.")
+            return
+        separador(f"Juegos con nota > {umbral}")
+        juegos = col.find(
+            {"valoraciones.nota": {"$gt": umbral}},
+            {"titulo": 1, "valoraciones.nota": 1, "_id": 0}
+        ).sort("valoraciones.nota", -1)
+        for j in juegos:
+            nota = j.get("valoraciones", {}).get("nota", "N/A")
+            print(f"  • {j['titulo']} — Nota: {nota}")
+ 
+    elif opcion == "5":
+        separador("Juegos ordenados por precio (ascendente)")
+        juegos = col.find(
+            {"disponible": True},
+            {"titulo": 1, "precio": 1, "_id": 0}
+        ).sort("precio", 1).limit(10)
+        for j in juegos:
+            print(f"  • {j['titulo']} — {j.get('precio', 'N/A')} €")
+ 
+    # ── Arrays ──
+    elif opcion == "6":
+        genero = input("Género a buscar (ej: RPG, Action, Racing): ").strip()
+        separador(f"Juegos del género '{genero}'")
+        juegos = col.find(
+            {"genero": {"$in": [genero]}},
+            {"titulo": 1, "genero": 1, "_id": 0}
+        )
+        encontrados = 0
+        for j in juegos:
+            print(f"  • {j['titulo']} — Géneros: {', '.join(j.get('genero', []))}")
+            encontrados += 1
+        if encontrados == 0:
+            print(f"  No se encontraron juegos del género '{genero}'.")
+ 
+    elif opcion == "7":
+        separador("Juegos disponibles en PS4 Y PC")
+        juegos = col.find(
+            {"plataforma": {"$all": ["PS4", "PC"]}},
+            {"titulo": 1, "plataforma": 1, "_id": 0}
+        )
+        for j in juegos:
+            print(f"  • {j['titulo']} — {', '.join(j.get('plataforma', []))}")
+ 
+    elif opcion == "8":
+        separador("Juegos con alguna puntuación de usuario = 10")
+        juegos = col.find(
+            {"valoraciones.usuarios": 10},
+            {"titulo": 1, "valoraciones.usuarios": 1, "_id": 0}
+        ).limit(8)
+        for j in juegos:
+            usuarios = j.get("valoraciones", {}).get("usuarios", [])
+            print(f"  • {j['titulo']} — Puntuaciones: {usuarios}")
+ 
+    # ── Documentos embebidos ──
+    elif opcion == "9":
+        desarrollador = input("Nombre del desarrollador: ").strip()
+        separador(f"Juegos de '{desarrollador}'")
+        juegos = col.find(
+            {"desarrollador.nombre": desarrollador},
+            {"titulo": 1, "año": 1, "desarrollador": 1, "_id": 0}
+        )
+        encontrados = 0
+        for j in juegos:
+            dev = j.get("desarrollador", {})
+            print(f"  • {j['titulo']} ({j.get('año', '?')}) — {dev.get('nombre', '')} ({dev.get('pais', '')})")
+            encontrados += 1
+        if encontrados == 0:
+            print(f"  No se encontraron juegos del desarrollador '{desarrollador}'.")
+ 
+    elif opcion == "10":
+        separador("Juegos con Metacritic ≥ 90")
+        juegos = col.find(
+            {"reseñas.criticos.metacritic": {"$gte": 90}},
+            {"titulo": 1, "reseñas.criticos.metacritic": 1, "_id": 0}
+        ).sort("reseñas.criticos.metacritic", -1)
+        for j in juegos:
+            meta = j.get("reseñas", {}).get("criticos", {}).get("metacritic", "N/A")
+            print(f"  • {j['titulo']} — Metacritic: {meta}")
+ 
+    elif opcion == "11":
+        separador("Juegos con ventas en América > 10 millones")
+        juegos = col.find(
+            {"ventas.america": {"$gt": 10}},
+            {"titulo": 1, "ventas": 1, "_id": 0}
+        ).sort("ventas.america", -1)
+        for j in juegos:
+            ventas = j.get("ventas", {})
+            print(f"  • {j['titulo']} — América: {ventas.get('america', 0)}M | Europa: {ventas.get('europa', 0)}M | Japón: {ventas.get('japon', 0)}M")
+ 
+    # ── Agregación ──
+    elif opcion == "12":
+        separador("Estadísticas por género")
+        pipeline = [
+            {"$unwind": "$genero"},
+            {
+                "$group": {
+                    "_id": "$genero",
+                    "total_juegos": {"$sum": 1},
+                    "nota_media": {"$avg": "$valoraciones.nota"},
+                    "ventas_america": {"$sum": "$ventas.america"}
+                }
+            },
+            {"$sort": {"total_juegos": -1}}
+        ]
+        resultados = col.aggregate(pipeline)
+        print(f"  {'Género':<20} {'Juegos':>7} {'Nota Media':>12} {'Ventas América':>16}")
+        print(f"  {'─'*20} {'─'*7} {'─'*12} {'─'*16}")
+        for r in resultados:
+            nota = round(r.get("nota_media", 0), 1)
+            ventas = round(r.get("ventas_america", 0), 1)
+            print(f"  {r['_id']:<20} {r['total_juegos']:>7} {nota:>12} {ventas:>14}M")
+ 
+    elif opcion == "13":
+        separador("Ranking de desarrolladores por ventas en Europa")
+        pipeline = [
+            {
+                "$group": {
+                    "_id": "$desarrollador.nombre",
+                    "pais": {"$first": "$desarrollador.pais"},
+                    "total_juegos": {"$sum": 1},
+                    "ventas_europa": {"$sum": "$ventas.europa"},
+                    "nota_media": {"$avg": "$valoraciones.nota"}
+                }
+            },
+            {"$sort": {"ventas_europa": -1}},
+            {"$limit": 5}
+        ]
+        resultados = col.aggregate(pipeline)
+        print(f"  {'Desarrollador':<20} {'País':<10} {'Juegos':>7} {'Ventas EU':>12} {'Nota':>6}")
+        print(f"  {'─'*20} {'─'*10} {'─'*7} {'─'*12} {'─'*6}")
+        for r in resultados:
+            nota = round(r.get("nota_media", 0), 1)
+            ventas = round(r.get("ventas_europa", 0), 1)
+            print(f"  {r['_id']:<20} {r.get('pais', 'N/A'):<10} {r['total_juegos']:>7} {ventas:>10}M {nota:>6}")
+ 
+    elif opcion == "0":
+        return
+    else:
+        print("Opción no válida.")
