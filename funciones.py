@@ -237,3 +237,102 @@ def insertar_varios(col):
 
     resultado = col.insert_many(juegos)
     print(f"\n {len(resultado.inserted_ids)} juegos insertados")
+
+
+# ──────────────────────────────────────────────
+#  2. ELIMINACIÓN
+# ──────────────────────────────────────────────
+ 
+def menu_eliminacion(col):
+    separador("ELIMINACIÓN DE DOCUMENTOS")
+    print("1. Eliminar un juego por título (deleteOne)")
+    print("2. Eliminar todos los juegos no disponibles (deleteMany)")
+    print("0. Volver")
+    opcion = input("\nElige una opción: ").strip()
+ 
+    if opcion == "1":
+        titulo = input("Introduce el título exacto a eliminar: ").strip()
+        resultado = col.delete_one({"titulo": titulo})
+        if resultado.deleted_count > 0:
+            print(f" Juego '{titulo}' eliminado correctamente.")
+        else:
+            print(f"  No se encontró ningún juego con el título '{titulo}'.")
+ 
+    elif opcion == "2":
+        resultado = col.delete_many({"disponible": False})
+        print(f" Se han eliminado {resultado.deleted_count} juego(s) no disponibles.")
+ 
+    elif opcion == "0":
+        return
+    else:
+        print("Opción no válida.")
+
+
+# ──────────────────────────────────────────────
+#  3. ACTUALIZACIÓN
+# ──────────────────────────────────────────────
+ 
+def menu_actualizacion(col):
+    separador("ACTUALIZACIÓN DE DOCUMENTOS")
+    print("1. Actualizar precio de un juego (updateOne)")
+    print("2. Marcar disponibles todos los juegos de un desarrollador (updateMany)")
+    print("3. Reemplazar documento completo (replaceOne)")
+    print("0. Volver")
+    opcion = input("\nElige una opción: ").strip()
+ 
+    if opcion == "1":
+        titulo = input("Título del juego: ").strip()
+        try:
+            nuevo_precio = float(input("Nuevo precio (€): ").strip())
+        except ValueError:
+            print(" Precio no válido.")
+            return
+        resultado = col.update_one(
+            {"titulo": titulo},
+            {"$set": {"precio": Decimal128(str(nuevo_precio))}}
+        )
+        if resultado.matched_count > 0:
+            print(f"Precio actualizado para '{titulo}'.")
+        else:
+            print(f"  No se encontró el juego '{titulo}'.")
+ 
+    elif opcion == "2":
+        desarrollador = input("Nombre del desarrollador: ").strip()
+        resultado = col.update_many(
+            {"desarrollador.nombre": desarrollador},
+            {"$set": {"disponible": True}}
+        )
+        print(f"{resultado.modified_count} juego(s) de '{desarrollador}' actualizados a disponible.")
+ 
+    elif opcion == "3":
+        titulo = input("Título del juego a reemplazar: ").strip()
+        juego_reemplazado = {
+            "titulo": titulo,
+            "año": 2024,
+            "genero": ["Action", "Adventure"],
+            "plataforma": ["PC", "PS5", "Xbox"],
+            "disponible": True,
+            "fecha_lanzamiento": datetime(2024, 1, 1),
+            "precio": Decimal128("69.99"),
+            "desarrollador": {"nombre": "Desarrollador Actualizado", "pais": "EEUU"},
+            "valoraciones": {"nota": 88, "usuarios": [9, 8, 9, 9]},
+            "ventas": {"europa": 1.0, "america": 2.0, "japon": 0.5},
+            "reseñas": {
+                "criticos": {"metacritic": 88, "ign": 8.8},
+                "usuarios_detalle": [
+                    {"usuario": "user1", "puntuacion": 9},
+                    {"usuario": "user2", "puntuacion": 8}
+                ]
+            },
+            "comentarios": "Documento reemplazado desde Python"
+        }
+        resultado = col.replace_one({"titulo": titulo}, juego_reemplazado)
+        if resultado.matched_count > 0:
+            print(f"Documento '{titulo}' reemplazado correctamente.")
+        else:
+            print(f"  No se encontró el juego '{titulo}'.")
+ 
+    elif opcion == "0":
+        return
+    else:
+        print("Opción no válida.")
