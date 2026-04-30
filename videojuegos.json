@@ -1,0 +1,376 @@
+[
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900001" },
+    "titulo": "Super Mario 64 DS",
+    "año": 2004,
+    "genero": ["Action", "Platform"],
+    "plataforma": ["Nintendo DS"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2004-11-21T00:00:00Z" },
+    "precio": { "$numberDecimal": "39.99" },
+    "desarrollador": { "nombre": "Nintendo", "pais": "Japón" },
+    "valoraciones": { "nota": 85, "usuarios": [8, 9, 9, 10] },
+    "ventas": { "europa": 2.5, "america": 3.1, "japon": 1.2 },
+    "reseñas": {
+      "criticos": { "metacritic": 85, "ign": 9 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 8 },
+        { "usuario": "user2", "puntuacion": 9 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446400, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900002" },
+    "titulo": "Lumines: Puzzle Fusion",
+    "año": 2004,
+    "genero": ["Strategy", "Puzzle"],
+    "plataforma": ["Sony PSP"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2004-12-12T00:00:00Z" },
+    "precio": { "$numberDecimal": "29.99" },
+    "desarrollador": { "nombre": "Ubisoft", "pais": "Francia" },
+    "valoraciones": { "nota": 89, "usuarios": [9, 9, 8, 9] },
+    "ventas": { "europa": 1.1, "america": 1.5, "japon": 0.8 },
+    "reseñas": {
+      "criticos": { "metacritic": 89, "ign": 9 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 9 },
+        { "usuario": "user2", "puntuacion": 8 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446401, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900003" },
+    "titulo": "Mario Kart DS",
+    "año": 2005,
+    "genero": ["Racing"],
+    "plataforma": ["Nintendo DS"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2005-11-14T00:00:00Z" },
+    "precio": { "$numberDecimal": "39.99" },
+    "desarrollador": { "nombre": "Nintendo", "pais": "Japón" },
+    "valoraciones": { "nota": 91, "usuarios": [10, 9, 10, 9] },
+    "ventas": { "europa": 5.0, "america": 6.2, "japon": 3.5 },
+    "reseñas": {
+      "criticos": { "metacritic": 91, "ign": 9.5 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 9 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446402, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900004" },
+    "titulo": "Call of Duty 4",
+    "año": 2007,
+    "genero": ["Shooter", "Action"],
+    "plataforma": ["Xbox 360", "PS3"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2007-11-05T00:00:00Z" },
+    "precio": { "$numberDecimal": "59.99" },
+    "desarrollador": { "nombre": "Activision", "pais": "EEUU" },
+    "valoraciones": { "nota": 94, "usuarios": [10, 9, 10, 9] },
+    "ventas": { "europa": 7.0, "america": 8.5, "japon": 0.5 },
+    "reseñas": {
+      "criticos": { "metacritic": 94, "ign": 10 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 9 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446403, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900005" },
+    "titulo": "GTA San Andreas",
+    "año": 2004,
+    "genero": ["Action", "Adventure"],
+    "plataforma": ["PS2"],
+    "disponible": false,
+    "fecha_lanzamiento": { "$date": "2004-10-26T00:00:00Z" },
+    "precio": { "$numberDecimal": "49.99" },
+    "desarrollador": { "nombre": "Rockstar", "pais": "EEUU" },
+    "valoraciones": { "nota": 95, "usuarios": [10, 10, 9, 10] },
+    "ventas": { "europa": 10.0, "america": 12.0, "japon": 0.6 },
+    "reseñas": {
+      "criticos": { "metacritic": 95, "ign": 10 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 10 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446404, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900009" },
+    "titulo": "Elden Ring",
+    "año": 2022,
+    "genero": ["RPG"],
+    "plataforma": ["PC", "PS5", "Xbox"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2022-02-25T00:00:00Z" },
+    "precio": { "$numberDecimal": "69.99" },
+    "desarrollador": { "nombre": "FromSoftware", "pais": "Japón" },
+    "valoraciones": { "nota": 96, "usuarios": [10, 10, 9, 10] },
+    "ventas": { "europa": 8.0, "america": 10.0, "japon": 2.0 },
+    "reseñas": {
+      "criticos": { "metacritic": 96, "ign": 10 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 10 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446409, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900010" },
+    "titulo": "Cyberpunk 2077",
+    "año": 2020,
+    "genero": ["RPG", "Action"],
+    "plataforma": ["PC", "PS4", "Xbox"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2020-12-10T00:00:00Z" },
+    "precio": { "$numberDecimal": "59.99" },
+    "desarrollador": { "nombre": "CD Projekt", "pais": "Polonia" },
+    "valoraciones": { "nota": 86, "usuarios": [7, 8, 9, 8] },
+    "ventas": { "europa": 7.0, "america": 9.0, "japon": 1.5 },
+    "reseñas": {
+      "criticos": { "metacritic": 86, "ign": 9 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 7 },
+        { "usuario": "user2", "puntuacion": 8 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446410, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900011" },
+    "titulo": "The Witcher 3",
+    "año": 2015,
+    "genero": ["RPG"],
+    "plataforma": ["PC", "PS4", "Xbox"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2015-05-19T00:00:00Z" },
+    "precio": { "$numberDecimal": "49.99" },
+    "desarrollador": { "nombre": "CD Projekt", "pais": "Polonia" },
+    "valoraciones": { "nota": 93, "usuarios": [10, 9, 10, 9] },
+    "ventas": { "europa": 6.5, "america": 7.5, "japon": 1.0 },
+    "reseñas": {
+      "criticos": { "metacritic": 93, "ign": 9.3 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 9 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446411, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900012" },
+    "titulo": "Red Dead Redemption 2",
+    "año": 2018,
+    "genero": ["Action", "Adventure"],
+    "plataforma": ["PS4", "Xbox", "PC"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2018-10-26T00:00:00Z" },
+    "precio": { "$numberDecimal": "59.99" },
+    "desarrollador": { "nombre": "Rockstar", "pais": "EEUU" },
+    "valoraciones": { "nota": 97, "usuarios": [10, 10, 9, 10] },
+    "ventas": { "europa": 9.0, "america": 12.0, "japon": 0.8 },
+    "reseñas": {
+      "criticos": { "metacritic": 97, "ign": 10 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 10 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446412, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900013" },
+    "titulo": "God of War",
+    "año": 2018,
+    "genero": ["Action"],
+    "plataforma": ["PS4"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2018-04-20T00:00:00Z" },
+    "precio": { "$numberDecimal": "49.99" },
+    "desarrollador": { "nombre": "Sony", "pais": "Japón" },
+    "valoraciones": { "nota": 94, "usuarios": [10, 9, 10, 9] },
+    "ventas": { "europa": 5.0, "america": 8.0, "japon": 0.6 },
+    "reseñas": {
+      "criticos": { "metacritic": 94, "ign": 10 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 9 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446413, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900014" },
+    "titulo": "Minecraft",
+    "año": 2011,
+    "genero": ["Sandbox", "Adventure"],
+    "plataforma": ["PC", "Xbox", "PS4"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2011-11-18T00:00:00Z" },
+    "precio": { "$numberDecimal": "26.95" },
+    "desarrollador": { "nombre": "Mojang", "pais": "Suecia" },
+    "valoraciones": { "nota": 93, "usuarios": [10, 10, 9, 10] },
+    "ventas": { "europa": 15.0, "america": 20.0, "japon": 2.0 },
+    "reseñas": {
+      "criticos": { "metacritic": 93, "ign": 9.0 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 10 },
+        { "usuario": "user2", "puntuacion": 10 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446414, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900015" },
+    "titulo": "Fortnite",
+    "año": 2017,
+    "genero": ["Battle Royale"],
+    "plataforma": ["PC", "PS4", "Xbox"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2017-07-21T00:00:00Z" },
+    "precio": { "$numberDecimal": "0.00" },
+    "desarrollador": { "nombre": "Epic Games", "pais": "EEUU" },
+    "valoraciones": { "nota": 85, "usuarios": [8, 9, 8, 9] },
+    "ventas": { "europa": 12.0, "america": 18.0, "japon": 1.5 },
+    "reseñas": {
+      "criticos": { "metacritic": 85, "ign": 8.5 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 8 },
+        { "usuario": "user2", "puntuacion": 9 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446415, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900016" },
+    "titulo": "Skylanders: Spyro's Adventure",
+    "año": 2011,
+    "genero": ["Action", "Adventure"],
+    "plataforma": ["PS3", "Xbox 360", "Wii", "PC"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2011-10-13T00:00:00Z" },
+    "precio": { "$numberDecimal": "59.99" },
+    "desarrollador": { "nombre": "Activision", "pais": "EEUU" },
+    "valoraciones": { "nota": 87, "usuarios": [8, 9, 8, 9] },
+    "ventas": { "europa": 3.5, "america": 5.0, "japon": 0.4 },
+    "reseñas": {
+      "criticos": { "metacritic": 87, "ign": 8.5 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 8 },
+        { "usuario": "user2", "puntuacion": 9 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446416, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900017" },
+    "titulo": "Skylanders Giants",
+    "año": 2012,
+    "genero": ["Action"],
+    "plataforma": ["PS3", "Xbox 360", "Wii", "3DS"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2012-10-19T00:00:00Z" },
+    "precio": { "$numberDecimal": "59.99" },
+    "desarrollador": { "nombre": "Activision", "pais": "EEUU" },
+    "valoraciones": { "nota": 86, "usuarios": [8, 8, 9, 8] },
+    "ventas": { "europa": 2.8, "america": 4.2, "japon": 0.3 },
+    "reseñas": {
+      "criticos": { "metacritic": 86, "ign": 8.0 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 8 },
+        { "usuario": "user2", "puntuacion": 8 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446417, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900018" },
+    "titulo": "Assassin's Creed II",
+    "año": 2009,
+    "genero": ["Action", "Adventure"],
+    "plataforma": ["PS3", "Xbox 360", "PC"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2009-11-17T00:00:00Z" },
+    "precio": { "$numberDecimal": "49.99" },
+    "desarrollador": { "nombre": "Ubisoft", "pais": "Francia" },
+    "valoraciones": { "nota": 90, "usuarios": [9, 10, 9, 9] },
+    "ventas": { "europa": 6.0, "america": 7.0, "japon": 0.5 },
+    "reseñas": {
+      "criticos": { "metacritic": 90, "ign": 9.3 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 9 },
+        { "usuario": "user2", "puntuacion": 10 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446418, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900019" },
+    "titulo": "Dark Souls",
+    "año": 2011,
+    "genero": ["RPG", "Action"],
+    "plataforma": ["PS3", "Xbox 360", "PC"],
+    "disponible": true,
+    "fecha_lanzamiento": { "$date": "2011-09-22T00:00:00Z" },
+    "precio": { "$numberDecimal": "39.99" },
+    "desarrollador": { "nombre": "FromSoftware", "pais": "Japón" },
+    "valoraciones": { "nota": 89, "usuarios": [9, 10, 9, 10] },
+    "ventas": { "europa": 4.0, "america": 5.5, "japon": 1.2 },
+    "reseñas": {
+      "criticos": { "metacritic": 89, "ign": 9.0 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 9 },
+        { "usuario": "user2", "puntuacion": 10 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446419, "i": 1 } },
+    "comentarios": null
+  },
+  {
+    "_id": { "$oid": "661f1a2b3c4d5e6f78900020" },
+    "titulo": "Gran Turismo 5",
+    "año": 2010,
+    "genero": ["Racing"],
+    "plataforma": ["PS3"],
+    "disponible": false,
+    "fecha_lanzamiento": { "$date": "2010-11-24T00:00:00Z" },
+    "precio": { "$numberDecimal": "49.99" },
+    "desarrollador": { "nombre": "Sony", "pais": "Japón" },
+    "valoraciones": { "nota": 84, "usuarios": [8, 8, 9, 8] },
+    "ventas": { "europa": 7.5, "america": 5.5, "japon": 2.5 },
+    "reseñas": {
+      "criticos": { "metacritic": 84, "ign": 8.5 },
+      "usuarios_detalle": [
+        { "usuario": "user1", "puntuacion": 8 },
+        { "usuario": "user2", "puntuacion": 8 }
+      ]
+    },
+    "ultima_actualizacion": { "$timestamp": { "t": 1713446420, "i": 1 } },
+    "comentarios": null
+  }
+]
