@@ -44,6 +44,7 @@ mongoimport --db videojuegosDB --collection juegos --file data/videojuegos.json 
 - `updateOne()` — modifica un único documento
 - `updateMany()` — modifica varios documentos
 - `replaceOne()` — reemplaza completamente un documento
+**Consultas**
 Y las consultas simples.
 ---
  
