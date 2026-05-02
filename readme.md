@@ -32,7 +32,7 @@ Dataset original basado en [CORGIS](https://corgis-edu.github.io/corgis/datasets
 mongoimport --db videojuegosDB --collection juegos --file data/videojuegos.json --jsonArray
 ```
  
-### Operaciones implementadas (queries/operaciones_mongodb.js)
+### Operaciones implementadas 
  
 **Inserción**
 - `insertOne()` — inserta un único documento
@@ -44,29 +44,7 @@ mongoimport --db videojuegosDB --collection juegos --file data/videojuegos.json 
 - `updateOne()` — modifica un único documento
 - `updateMany()` — modifica varios documentos
 - `replaceOne()` — reemplaza completamente un documento
-**Consultas simples (7)**
-1. Videojuegos por año
-2. Filtrado por disponibilidad
-3. Proyección de campos específicos
-4. Top 5 por valoración con `sort` y `limit`
-5. Juegos con nota superior a 90
-6. Juegos disponibles con precio menor a 40 €
-7. Juegos lanzados entre 2010 y 2020
-**Consultas con arrays (5)**
-1. Búsqueda por género con `$in`
-2. Juegos en PS4 y PC con `$all`
-3. Usuarios con puntuación 10
-4. Juegos con múltiples géneros
-5. Juegos en Xbox 360 o PS3
-**Consultas con documentos embebidos (5)**
-1. Juegos por desarrollador
-2. Metacritic ≥ 90
-3. Ventas en América > 10 millones
-4. Desarrolladores de Japón
-5. IGN = 10 y ventas Europa > 5M
-**Consultas de agregación (2)**
-1. Estadísticas por género (`$unwind`, `$group`, `$sort`, `$project`)
-2. Ranking de desarrolladores por ventas en Europa
+Y las consultas simples.
 ---
  
 ##  Parte 2 — Programa Python
