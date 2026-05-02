@@ -4,20 +4,7 @@ Proyecto de práctica sobre MongoDB con una colección de videojuegos.
 Dataset original basado en [CORGIS](https://corgis-edu.github.io/corgis/datasets/json/video_games/video_games.json), adaptado y ampliado para cubrir todos los tipos de datos y operaciones requeridas.
  
 ---
- 
-##  Estructura del proyecto
- 
-```
-mongodb-videojuegos/
-├── data/
-│   └── videojuegos.json          # Colección principal (17 documentos)
-├── queries/
-│   └── operaciones_mongodb.js    # Inserción, eliminación, actualización y consultas
-├── python/
-│   └── menu.py                   # Programa Python con menú interactivo (pymongo)
-├── optional/
-│   └── parte_opcional.js         # Esquema relacional + transformación + operaciones
-└── README.md
+
 ```
  
 ---
