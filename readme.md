@@ -34,18 +34,14 @@ mongoimport --db videojuegosDB --collection juegos --file data/videojuegos.json 
  
 ### Operaciones implementadas 
  
-**Inserción**
+**Inserción**,**Eliminación** y**Eliminación**(Y las consultas simples)
 - `insertOne()` — inserta un único documento
 - `insertMany()` — inserta varios documentos
-**Eliminación**
 - `deleteOne()` — elimina un documento concreto
 - `deleteMany()` — elimina todos los documentos que cumplen una condición
-**Actualización**
 - `updateOne()` — modifica un único documento
 - `updateMany()` — modifica varios documentos
 - `replaceOne()` — reemplaza completamente un documento
-**Consultas**
-Y las consultas simples.
 ---
  
 ##  Parte 2 — Programa Python
