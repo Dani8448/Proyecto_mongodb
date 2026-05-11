@@ -1,8 +1,10 @@
 from funciones import *
-false = 0
+
 
 def menu_principal(col):
-    while false == 0:
+    salir = False
+    
+    while not salir:
         separador()
         print("  GESTIÓN DE VIDEOJUEGOS - MongoDB")
         separador()
@@ -25,7 +27,7 @@ def menu_principal(col):
             menu_consultas(col)
         elif opcion == "0":
             print("\nHasta luego.\n")
-            false = 1
+            salir = True
         else:
             print("Opción no válida.")
 
